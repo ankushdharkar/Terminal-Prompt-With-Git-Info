@@ -19,7 +19,7 @@ git_dirty_check() {
 # export PS1='$(git_dirty_check) >'
 
 git_unpushed(){
-  brinfo=$(git branch -v | grep $(git_branch_name))
+  brinfo=$(git branch -v | grep "^\*.*"$(git_branch_name)".*$")
  
   if [[ $brinfo =~ ("[ahead "([[:digit:]]*)]) ]]
   then
